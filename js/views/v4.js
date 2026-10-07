@@ -62,13 +62,17 @@ export function initV4() {
     };
   }
 
-  const config = { displaylogo: false, responsive: true, modeBarButtonsToRemove: ["toImage", "resetCameraLastSave3d"] };
+  const config = { displaylogo: false, responsive: true, scrollZoom: false, modeBarButtonsToRemove: ["toImage", "resetCameraLastSave3d"] };
 
   function draw(st, patch) {
     $("#v4tr").value = st.tr; $("#v4trOut").textContent = `${st.tr.toFixed(1)} s`;
     if (!el.dataset.ready) {
       Plotly.newPlot(el, traces(st), layout(), config);
       el.dataset.ready = "1";
+      // Plotly's 3D camera cancels wheel events on its canvas even with scrollZoom off, which
+      // traps the page scroll. Stop the event at the container, in the capture phase, before it
+      // reaches the canvas; nothing calls preventDefault, so the browser scrolls the page as usual.
+      el.addEventListener("wheel", (e) => e.stopPropagation(), { capture: true });
       el.on("plotly_hover", (ev) => {
         const p = ev.points[0];
         if (p.data.type === "surface") {
