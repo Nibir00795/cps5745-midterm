@@ -1,4 +1,4 @@
-# Per What? Rain, Darkness and the Missing Denominator
+# Counting Is Not Risk: Rain, Darkness and the Missing Denominator
 
 A seven-view dynamic explainer built for CPS 5745 (Interactive Information Visualization, Kean University, Fall 2026) by Md Jonayed Hossain Chowdhury.
 

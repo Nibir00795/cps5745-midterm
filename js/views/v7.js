@@ -105,7 +105,7 @@ export function initV7(conditions, exposure) {
     `Rain does not settle: Harwood's wet-pavement hours make rain look ${wetDir} per mile (${w.bars[1].rate.toFixed(2)}×), while studies that measured exposure directly find rain about 1.7× worse. The crashes are the same; the denominators disagree.`;
   $("#v7limits").innerHTML = `<b>What this cannot tell you.</b> These are reported incidents relayed by traffic feeds, not a census, and coverage varies by state and year (View 2). ` +
     `Weather comes from the nearest station at report time, so local showers can be missed. Wet-pavement hours are not wet vehicle-miles: people drive less in rain, and the road stays wet after rain stops, which pushes the published rain estimate and this dataset's rain definition apart. ` +
-    `Night is the Sunrise_Sunset flag; the 25% figure counts hours of darkness. Severity is traffic delay, so none of this says anything about injury. The question every safety statistic needs is the one in the title: per what?`;
+    `Night is the Sunrise_Sunset flag; the 25% figure counts hours of darkness. Severity is traffic delay, so none of this says anything about injury. Before trusting any safety statistic, ask: per what? Per mile driven, per hour on the road, per trip. A count without that answer is not a risk.`;
 
   const segM = segmented("#v7mode", (k) => { measure = k; draw(); });
   const segC = segmented("#v7cmp", (k) => { cmp = k; draw(false); });
