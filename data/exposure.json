@@ -1,0 +1,45 @@
+{
+  "_comment": "External exposure estimates for Views 6 and 7. These are NOT in the US Accidents dataset; each comes from a cited outside source. Shares are fractions of vehicle-miles (or of hours, where stated).",
+  "night": {
+    "label": "night",
+    "baseline_label": "day",
+    "exposure_mid": 0.25,
+    "exposure_lo": 0.22,
+    "exposure_hi": 0.28,
+    "interval_note": "Both sources give a single value of about 25%. The 22 to 28% band is a sensitivity range I set, not a published interval.",
+    "measure": "share of vehicle-miles travelled during darkness",
+    "sources": [
+      {"short": "FHWA, Proven Safety Countermeasures: Lighting (FHWA-SA-21-050)", "quote": "only 25 percent of vehicle miles traveled (VMT) occur at night", "url": "https://highways.dot.gov/safety/proven-safety-countermeasures/lighting"},
+      {"short": "Varghese and Shankar, NHTSA Research Note DOT HS 810 637 (2007)", "quote": "approximately 25 percent of travel occurs during hours of darkness", "url": "https://crashstats.nhtsa.dot.gov/Api/Public/Publication/810637"}
+    ],
+    "context": "NHTSA and FHWA report the nighttime fatality rate per mile at about three times the daytime rate. That is fatalities, not all reported incidents, so it is context rather than a check."
+  },
+  "wet": {
+    "label": "rain",
+    "baseline_label": "dry",
+    "exposure_mid": 0.106,
+    "exposure_lo": 0.083,
+    "exposure_hi": 0.129,
+    "interval_note": "Range across the Missouri and Pennsylvania stations in Harwood et al. (8.3% Kansas City to 12.9% St. Louis); the midpoint is used as the central value. The same study finds 3.7% (Key West) to 38.5% (Washington rain forest) across climates, so no single national figure exists.",
+    "measure": "share of hours with wet pavement (WETTIME model, hourly weather records)",
+    "measure_mismatch": "Wet-pavement hours include drying time after rain stops, so they exceed hours when rain is falling. This project classifies a crash as wet when rain is reported falling, so the true exposure for that definition is lower than this estimate, which biases the computed rain rate downward.",
+    "sources": [
+      {"short": "Harwood, Blackburn, Kibler and Kulakowski, Estimation of Wet Pavement Exposure from Available Weather Records, Transportation Research Record 1172 (1988), 32-41", "url": "https://onlinepubs.trb.org/Onlinepubs/trr/1988/1172/1172-004.pdf"}
+    ],
+    "independent_check": {
+      "short": "Qiu and Nixon, Effects of Adverse Weather on Traffic Crashes: Systematic Review and Meta-Analysis, Transportation Research Record 2055 (2008), 139-146",
+      "rate_ratio_mid": 1.71,
+      "rate_ratio_lo": 1.31,
+      "rate_ratio_hi": 2.11,
+      "note": "Rain increases the crash rate by 71% (95% CI 31 to 111%), pooled across studies that measured exposure directly.",
+      "url": "https://doi.org/10.3141/2055-16"
+    }
+  },
+  "fhwa_weather": {
+    "short": "FHWA Road Weather Management Program, How Do Weather Events Impact Roads? (2019-2023 averages of NHTSA data)",
+    "weather_related_crashes_per_year": 744911,
+    "weather_related_share": 0.12,
+    "rain_crashes_per_year": 574047,
+    "url": "https://ops.fhwa.dot.gov/weather/roadimpact.htm"
+  }
+}

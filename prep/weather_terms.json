@@ -1,0 +1,39 @@
+{
+  "_comment": "Classification of US Accidents Weather_Condition strings. Matching is case-insensitive. Rules are applied in this order: exact ambiguous values, exact dry overrides, then frozen substrings, then wet substrings; anything left is dry. A missing value is never classified; it is counted as missing. Edit this file, rerun prep.py, and every view updates.",
+  "ambiguous_exact": [
+    "N/A Precipitation",
+    "Precipitation",
+    "Heavy Precipitation",
+    "Light Precipitation"
+  ],
+  "frozen_substrings": [
+    "snow",
+    "sleet",
+    "ice pellets",
+    "freezing",
+    "hail",
+    "wintry mix",
+    "small hail",
+    "ice"
+  ],
+  "wet_substrings": [
+    "rain",
+    "drizzle",
+    "shower",
+    "thunderstorm",
+    "t-storm",
+    "squalls"
+  ],
+  "notes": {
+    "dry": "No liquid or frozen precipitation in the reported condition. Includes fair, clear, cloudy, overcast, haze, smoke, dust, fog and mist. Fog and mist reduce visibility but are not precipitation, so the road is not assumed wet.",
+    "wet": "Liquid precipitation reported at the nearest weather station at the time of the incident.",
+    "frozen": "Snow, sleet, hail or freezing precipitation. Held out of the wet versus dry comparison because friction on ice and snow is a different regime, and reported on its own.",
+    "ambiguous": "Precipitation of unstated type. Excluded from the comparison and counted.",
+    "thunder": "'Thunder' or 'Thunder in the Vicinity' without rain is dry, because thunder alone does not wet the road.",
+    "dry_exact": "Overrides found by auditing the real mapping: 'Showers in the Vicinity' means showers near the station, not on the road; 'Duststorm' matched 'storm' terms by accident."
+  },
+  "dry_exact": [
+    "Showers in the Vicinity",
+    "Duststorm"
+  ]
+}

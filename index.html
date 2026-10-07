@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Per What? Rain, Darkness and the Missing Denominator</title>
+<meta name="description" content="A seven-view explainer: why 7.7 million reported US crashes cluster in clear daylight, why the physics says that is not where the danger is, and what the data cannot tell you.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">Per what?</div>
+  <nav aria-label="Views">
+    <a href="#v1">1 Record</a><a href="#v2">2 Audit</a><a href="#v3">3 Physics</a><a href="#v4">4 Surface</a>
+    <a href="#v5">5 Contradiction</a><a href="#v6">6 Denominator</a><a href="#v7">7 Evidence</a><a href="#about">Data &amp; method</a>
+  </nav>
+  <button class="btn reset" id="resetAll" title="Reset every view to its starting state">Reset all</button>
+</header>
+
+<div class="hero">
+  <p class="kicker">CPS 5745 Midterm · dynamic scientific story</p>
+  <h1>Per what? Rain, darkness, and the number 7.7 million crashes do not contain</h1>
+  <p class="lede">Most reported crashes in the United States happen in clear weather, on dry roads, in daylight. Read as risk, that is an argument for driving in the rain. Physics says the opposite. This page sets the two against each other and shows why both are true.</p>
+  <p class="byline">Md Jonayed Hossain Chowdhury · Kean University · Data: US Accidents 2016 to 2023 (Moosavi et al.) · Model: labelled simulation</p>
+</div>
+<div class="banner" id="dataBanner" hidden></div>
+
+<!-- ======================= BEGINNING ======================= -->
+<div class="act">
+  <div class="actlabel">Beginning · the question and the record</div>
+
+  <section class="view" id="v1" aria-labelledby="h1">
+    <div class="vhead"><span class="badge">View 1</span><h2 id="h1">What the record says</h2><span class="data">reported data</span></div>
+    <p class="say">Every reported crash, counted by the hour it started and split by the weather at the nearest station. Press play and watch the day build. <strong>Where do the crashes pile up?</strong></p>
+    <div class="legend" id="v1legend"></div>
+    <div class="viz" id="v1viz"></div>
+    <div class="controls">
+      <button class="btn primary" id="v1play" aria-label="Play">▶ Play</button>
+      <button class="btn" id="v1step" title="Advance one hour">Step +1 h</button>
+      <label class="ctl">hour <input type="range" id="v1hour" min="0" max="23" step="1" value="23"><output id="v1hourOut"></output></label>
+      <span class="ctl">show</span>
+      <div class="seg" id="v1filter" role="group" aria-label="Weather filter">
+        <button data-k="all" class="on">all weather</button><button data-k="dry">dry</button><button data-k="wet">rain</button><button data-k="frozen">snow / ice</button>
+      </div>
+      <button class="btn reset" id="v1reset">Reset</button>
+    </div>
+    <div class="readout" id="v1read">Hover a bar for exact counts.</div>
+    <p class="note">Shaded columns: hours when most reports are after sunset (from the dataset's <code>Sunrise_Sunset</code> field). Rows missing the weather or daylight field are left out of this view and counted: <span id="v1excl"></span>.</p>
+  </section>
+
+  <section class="view" id="v2" aria-labelledby="h2">
+    <div class="vhead"><span class="badge">View 2</span><h2 id="h2">What the record actually counts</h2><span class="data">reported data</span></div>
+    <p class="say">Before reading anything into View 1, three facts about the source. Coverage changes over time because the feeds changed. <strong>Severity measures traffic delay, not injury.</strong> And several weather fields are often empty. Nowhere in its 46 columns is there a count of miles driven.</p>
+    <div class="viz three" id="v2viz">
+      <div class="panel"><h4>Records per month</h4><div id="v2a"></div></div>
+      <div class="panel"><h4>Severity (1 to 4)</h4><div id="v2b"></div><p class="def">Defined by the authors as impact on traffic: 1 is a short delay, 4 a long one.</p></div>
+      <div class="panel"><h4>Missing values by field</h4><div id="v2c"></div></div>
+    </div>
+    <div class="controls">
+      <div class="seg" id="v2mode" role="group" aria-label="Units"><button data-k="count" class="on">counts</button><button data-k="pct">percent</button></div>
+      <button class="btn reset" id="v2reset">Reset</button>
+    </div>
+    <div class="readout" id="v2read">Hover any bar for its count, share and definition.</div>
+    <details class="more"><summary>How weather is classified (the full term list is in prep/weather_terms.json)</summary>
+      <p class="note">Rules, in order: precipitation of unstated type is ambiguous; any snow, sleet, hail, ice or freezing term is snow / ice; any rain, drizzle, shower or thunderstorm term is rain; everything else, including fog, mist and haze, is dry. A missing value is never classified. The 15 most common values:</p>
+      <table id="v2map"></table>
+    </details>
+  </section>
+</div>
+
+<!-- ======================= MIDDLE ======================= -->
+<div class="act">
+  <div class="actlabel">Middle · the mechanism and the contradiction</div>
+
+  <section class="view" id="v3" aria-labelledby="h3">
+    <div class="vhead"><span class="badge">View 3</span><h2 id="h3">The physics of stopping</h2><span class="sim">simulation</span></div>
+    <p class="say">From the moment a hazard appears, a car travels while the driver reacts (<em>v·t<sub>r</sub></em>) and then while it brakes (<em>v²/2μg</em>). The first grows with speed. <strong>The second grows with speed squared and with less friction.</strong> Both bars share one axis in feet.</p>
+    <div class="legend"><span><i style="background:var(--react)"></i>reaction distance</span><span><i style="background:var(--dry)"></i>braking, dry road</span><span><i style="background:var(--wet)"></i>braking, wet road</span></div>
+    <div class="viz" id="v3viz"></div>
+    <div class="controls">
+      <label class="ctl">speed <input type="range" id="v3mph" min="20" max="80" step="1"><output id="v3mphOut"></output></label>
+      <label class="ctl">dry μ <input type="range" id="v3muDry" min="0.10" max="0.90" step="0.01"><output id="v3muDryOut"></output></label>
+      <label class="ctl">wet μ <input type="range" id="v3muWet" min="0.10" max="0.90" step="0.01"><output id="v3muWetOut"></output></label>
+      <label class="ctl">reaction time <input type="range" id="v3tr" min="0.5" max="2.5" step="0.1"><output id="v3trOut"></output></label>
+      <button class="btn reset" id="v3reset">Reset</button>
+    </div>
+    <div class="readout" id="v3read"></div>
+    <p class="note"><b>Assumptions.</b> Constant deceleration through the whole stop, so μ is fixed. Level road. One braking input, no steering. One reaction time, not a distribution. g = 32.174 ft/s². Typical μ: about 0.70 dry asphalt, 0.40 wet. AASHTO's design reaction time is 2.5 s. This is a model, not a measurement of any crash.</p>
+  </section>
+
+  <section class="view" id="v4" aria-labelledby="h4">
+    <div class="vhead"><span class="badge">View 4</span><h2 id="h4">The whole surface</h2><span class="sim">simulation</span></div>
+    <p class="say">View 3 is one slice. Here is stopping distance for every speed and every friction at once. The black line runs across every friction at your View 3 speed; the two dots are View 3's dry and wet roads. <strong>Find the wall: below μ ≈ 0.3 the ground rises steeply.</strong> Drag to rotate; hover for exact values.</p>
+    <div id="surface" role="img" aria-label="3D surface of stopping distance over speed and friction"></div>
+    <div class="controls">
+      <label class="ctl">reaction time <input type="range" id="v4tr" min="0.5" max="2.5" step="0.1"><output id="v4trOut"></output></label>
+      <div class="seg" id="v4cam" role="group" aria-label="Camera"><button data-k="orbit" class="on">3/4 view</button><button data-k="top">top-down</button><button data-k="side">side-on</button></div>
+      <label class="ctl"><input type="checkbox" id="v4slice" checked> show View 3 slice</label>
+      <button class="btn reset" id="v4reset">Reset</button>
+    </div>
+    <div class="readout" id="v4read">Hover the surface: speed, friction and stopping distance at that point.</div>
+    <p class="note">The surface is the one place a third axis adds information: distance depends on two inputs at once, and the feature that matters is the gradient. Perspective can mislead, so no value is read by eye: every point reports exact numbers, and the camera presets return to known views.</p>
+  </section>
+
+  <section class="view" id="v5" aria-labelledby="h5">
+    <div class="vhead"><span class="badge">View 5</span><h2 id="h5">The physics against the record</h2><span class="sim">simulation</span><span class="data">reported data</span></div>
+    <p class="say">The same four conditions, ranked twice. Top: modelled stopping distance using your View 3 settings. Bottom: share of reported crashes. <strong>The model says worse to the right. The record says worse to the left.</strong> Move any View 3 slider: the top panel changes, the bottom never does.</p>
+    <div class="legend"><span><i style="background:var(--dry)"></i>dry</span><span><i style="background:var(--wet)"></i>rain</span><span><i class="hatch" style="background-color:#888"></i>night (hatched)</span></div>
+    <div class="viz" id="v5viz"></div>
+    <div class="controls">
+      <span class="ctl">highlight</span>
+      <div class="seg" id="v5filter" role="group" aria-label="Condition filter"><button data-k="all" class="on">all four</button><button data-k="day">daytime only</button><button data-k="night">night only</button></div>
+      <button class="btn reset" id="v5reset">Reset</button>
+    </div>
+    <div class="readout" id="v5read">Hover a condition: modelled distance, share of reports and the count, on one line.</div>
+    <p class="note">Two panels, two scales, never one axis: feet and percent are different quantities. Night adds <span id="v5night"></span> s of reaction time in the model, an assumption standing in for later hazard detection in the dark. Snow and ice are held out here (<span id="v5held"></span> reports) because their friction is a different regime.</p>
+  </section>
+
+  <section class="view" id="v6" aria-labelledby="h6">
+    <div class="vhead"><span class="badge">View 6</span><h2 id="h6">The denominator the data does not have</h2><span class="data">reported data</span><span class="sim">your assumption</span></div>
+    <p class="say">A count is exposure times risk. If 8% of crashes happen in rain, that is alarming only if far less than 8% of driving happens in rain. The dataset cannot say which. <strong>You supply the missing number: drag the slider and watch which line is on top.</strong></p>
+    <div class="legend" id="v6legend"></div>
+    <div class="viz" id="v6viz"></div>
+    <div class="controls">
+      <div class="seg" id="v6mode" role="group" aria-label="Comparison"><button data-k="wet" class="on">rain vs dry</button><button data-k="night">night vs day</button></div>
+      <label class="ctl">share of miles driven in <span id="v6cond">rain</span> <input type="range" id="v6e" min="0.5" max="50" step="0.5"><output id="v6eOut"></output></label>
+      <button class="btn reset" id="v6reset">Reset</button>
+    </div>
+    <div class="readout" id="v6read"></div>
+    <p class="note">Rates are relative to the average crash rate across both conditions, so 1.0 means "average". Near zero exposure the condition's rate runs off the chart: dividing by almost nothing produces a dramatic number that means nothing, so that region is clamped and labelled rather than drawn.</p>
+  </section>
+</div>
+
+<!-- ======================= END ======================= -->
+<div class="act">
+  <div class="actlabel">Ending · evidence, insight, limits</div>
+
+  <section class="view" id="v7" aria-labelledby="h7">
+    <div class="vhead"><span class="badge">View 7</span><h2 id="h7">What an outside denominator buys, and what it does not</h2><span class="data">reported data</span><span class="data">published estimates</span></div>
+    <p class="say">Now replace your guess with published exposure estimates. Toggle from counts to rates and watch the ranking change. The whisker is the uncertainty in the outside estimate; the counts get none because they are what they are. <strong id="v7claim"></strong></p>
+    <div class="legend" id="v7legend"></div>
+    <div class="viz" id="v7viz"></div>
+    <div class="controls">
+      <div class="seg" id="v7mode" role="group" aria-label="Measure"><button data-k="count" class="on">share of crashes</button><button data-k="rate">crashes per mile</button></div>
+      <div class="seg" id="v7cmp" role="group" aria-label="Comparison"><button data-k="night" class="on">night vs day</button><button data-k="wet">rain vs dry</button></div>
+      <button class="btn reset" id="v7reset">Reset</button>
+    </div>
+    <div class="readout" id="v7read">Hover a bar or whisker for the source and its year.</div>
+    <div class="note" id="v7limits"></div>
+  </section>
+</div>
+
+<div class="prose" id="about">
+  <div class="card">
+    <h2>Data, model and method</h2>
+    <h3>Data</h3>
+    <p>US Accidents (2016 to 2023), Sobhan Moosavi et al., about 7.7 million reported incidents across the contiguous US, 46 columns, CC BY-NC-SA 4.0. These are incidents relayed by traffic APIs, not a crash census. <a href="https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents">Kaggle source</a>.</p>
+    <p id="aboutPrep"></p>
+    <h3>Model</h3>
+    <p>d = v·t<sub>r</sub> + v²/(2μg), with v in ft/s, t<sub>r</sub> in s, μ dimensionless and g = 32.174 ft/s². Checked against AASHTO's published stopping sight distance: at 60 mph with t<sub>r</sub> = 2.5 s and a = 3.4 m/s² (μ = 0.347) the model gives 567 ft against a published 570.</p>
+    <h3>Outside estimates</h3>
+    <ul id="aboutSources"></ul>
+    <h3>Reproduce it</h3>
+<pre>python3 prep/prep.py          # 3 GB CSV in data/raw/ -> data/*.json, about a minute
+node checks/check_model.mjs    # model, worked example and boundary cases
+python3 -m http.server 8000    # then open http://localhost:8000</pre>
+  </div>
+</div>
+
+<footer>Md Jonayed Hossain Chowdhury · CPS 5745 Interactive Information Visualization · Kean University · Fall 2026</footer>
+
+<div id="tip" role="tooltip"></div>
+<script src="lib/d3.min.js"></script>
+<script src="lib/plotly-gl3d.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

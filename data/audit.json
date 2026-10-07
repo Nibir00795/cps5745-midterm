@@ -1,0 +1,992 @@
+{
+ "rows_read": 7728394,
+ "by_month": {
+  "2016-01": 7,
+  "2016-02": 985,
+  "2016-03": 6330,
+  "2016-04": 18088,
+  "2016-05": 17610,
+  "2016-06": 30538,
+  "2016-07": 45780,
+  "2016-08": 56457,
+  "2016-09": 54698,
+  "2016-10": 55669,
+  "2016-11": 65040,
+  "2016-12": 59619,
+  "2017-01": 55713,
+  "2017-02": 51679,
+  "2017-03": 57315,
+  "2017-04": 48115,
+  "2017-05": 41136,
+  "2017-06": 46272,
+  "2017-07": 43262,
+  "2017-08": 80955,
+  "2017-09": 76902,
+  "2017-10": 74975,
+  "2017-11": 70127,
+  "2017-12": 71642,
+  "2018-01": 75093,
+  "2018-02": 71535,
+  "2018-03": 74484,
+  "2018-04": 72657,
+  "2018-05": 76529,
+  "2018-06": 67831,
+  "2018-07": 65802,
+  "2018-08": 76436,
+  "2018-09": 73354,
+  "2018-10": 87270,
+  "2018-11": 82156,
+  "2018-12": 70279,
+  "2019-01": 79368,
+  "2019-02": 74631,
+  "2019-03": 69437,
+  "2019-04": 73020,
+  "2019-05": 73898,
+  "2019-06": 65525,
+  "2019-07": 68257,
+  "2019-08": 75269,
+  "2019-09": 87699,
+  "2019-10": 106915,
+  "2019-11": 81920,
+  "2019-12": 98364,
+  "2020-01": 92037,
+  "2020-02": 85848,
+  "2020-03": 86054,
+  "2020-04": 87845,
+  "2020-05": 87705,
+  "2020-06": 100471,
+  "2020-07": 35229,
+  "2020-08": 37320,
+  "2020-09": 84838,
+  "2020-10": 130879,
+  "2020-11": 172234,
+  "2020-12": 178453,
+  "2021-01": 152914,
+  "2021-02": 154935,
+  "2021-03": 90643,
+  "2021-04": 90888,
+  "2021-05": 101732,
+  "2021-06": 131472,
+  "2021-07": 113333,
+  "2021-08": 120868,
+  "2021-09": 134874,
+  "2021-10": 134287,
+  "2021-11": 157729,
+  "2021-12": 180078,
+  "2022-01": 135900,
+  "2022-02": 163839,
+  "2022-03": 140145,
+  "2022-04": 196687,
+  "2022-05": 159566,
+  "2022-06": 129264,
+  "2022-07": 140672,
+  "2022-08": 152361,
+  "2022-09": 139016,
+  "2022-10": 85135,
+  "2022-11": 130959,
+  "2022-12": 188908,
+  "2023-01": 160914,
+  "2023-02": 55532,
+  "2023-03": 30187
+ },
+ "severity": {
+  "1": 67366,
+  "2": 6156981,
+  "3": 1299337,
+  "4": 204710
+ },
+ "null_rows": {
+  "ID": 0,
+  "Severity": 0,
+  "Start_Time": 0,
+  "Weather_Condition": 173459,
+  "Sunrise_Sunset": 23246,
+  "Visibility(mi)": 177098,
+  "Precipitation(in)": 2203586,
+  "State": 0
+ },
+ "null_share": {
+  "ID": 0.0,
+  "Severity": 0.0,
+  "Start_Time": 0.0,
+  "Weather_Condition": 0.02244437848277404,
+  "Sunrise_Sunset": 0.0030078694228063423,
+  "Visibility(mi)": 0.022915239569825243,
+  "Precipitation(in)": 0.2851285791071211,
+  "State": 0.0
+ },
+ "by_state": {
+  "CA": 1741433,
+  "FL": 880192,
+  "TX": 582837,
+  "SC": 382557,
+  "NY": 347960,
+  "NC": 338199,
+  "VA": 303301,
+  "PA": 296620,
+  "MN": 192084,
+  "OR": 179660,
+  "AZ": 170609,
+  "GA": 169234,
+  "IL": 168958,
+  "TN": 167388,
+  "MI": 162191,
+  "LA": 149701,
+  "NJ": 140719,
+  "MD": 140417,
+  "OH": 118115,
+  "WA": 108221,
+  "AL": 101044,
+  "UT": 97079,
+  "CO": 90885,
+  "OK": 83647,
+  "MO": 77323,
+  "CT": 71005,
+  "IN": 67224,
+  "MA": 61996,
+  "WI": 34688,
+  "KY": 32254,
+  "NE": 28870,
+  "MT": 28496,
+  "IA": 26307,
+  "AR": 22780,
+  "NV": 21665,
+  "KS": 20992,
+  "DC": 18630,
+  "RI": 16971,
+  "MS": 15181,
+  "DE": 14097,
+  "WV": 13793,
+  "ID": 11376,
+  "NM": 10325,
+  "NH": 10213,
+  "WY": 3757,
+  "ND": 3487,
+  "ME": 2698,
+  "VT": 926,
+  "SD": 289
+ },
+ "weather_mapping": [
+  {
+   "value": "Fair",
+   "class": "dry",
+   "rows": 2560802
+  },
+  {
+   "value": "Mostly Cloudy",
+   "class": "dry",
+   "rows": 1016195
+  },
+  {
+   "value": "Cloudy",
+   "class": "dry",
+   "rows": 817082
+  },
+  {
+   "value": "Clear",
+   "class": "dry",
+   "rows": 808743
+  },
+  {
+   "value": "Partly Cloudy",
+   "class": "dry",
+   "rows": 698972
+  },
+  {
+   "value": "Overcast",
+   "class": "dry",
+   "rows": 382866
+  },
+  {
+   "value": "Light Rain",
+   "class": "wet",
+   "rows": 352957
+  },
+  {
+   "value": "Scattered Clouds",
+   "class": "dry",
+   "rows": 204829
+  },
+  {
+   "value": "Light Snow",
+   "class": "frozen",
+   "rows": 128680
+  },
+  {
+   "value": "Fog",
+   "class": "dry",
+   "rows": 99238
+  },
+  {
+   "value": "Rain",
+   "class": "wet",
+   "rows": 84331
+  },
+  {
+   "value": "Haze",
+   "class": "dry",
+   "rows": 76223
+  },
+  {
+   "value": "Fair / Windy",
+   "class": "dry",
+   "rows": 35671
+  },
+  {
+   "value": "Heavy Rain",
+   "class": "wet",
+   "rows": 32309
+  },
+  {
+   "value": "Light Drizzle",
+   "class": "wet",
+   "rows": 22684
+  },
+  {
+   "value": "Thunder in the Vicinity",
+   "class": "dry",
+   "rows": 17611
+  },
+  {
+   "value": "Cloudy / Windy",
+   "class": "dry",
+   "rows": 17035
+  },
+  {
+   "value": "T-Storm",
+   "class": "wet",
+   "rows": 16810
+  },
+  {
+   "value": "Mostly Cloudy / Windy",
+   "class": "dry",
+   "rows": 16508
+  },
+  {
+   "value": "Snow",
+   "class": "frozen",
+   "rows": 15537
+  },
+  {
+   "value": "Thunder",
+   "class": "dry",
+   "rows": 14202
+  },
+  {
+   "value": "Light Rain with Thunder",
+   "class": "wet",
+   "rows": 13597
+  },
+  {
+   "value": "Smoke",
+   "class": "dry",
+   "rows": 12668
+  },
+  {
+   "value": "Wintry Mix",
+   "class": "frozen",
+   "rows": 11703
+  },
+  {
+   "value": "Partly Cloudy / Windy",
+   "class": "dry",
+   "rows": 10241
+  },
+  {
+   "value": "Heavy T-Storm",
+   "class": "wet",
+   "rows": 9671
+  },
+  {
+   "value": "Light Rain / Windy",
+   "class": "wet",
+   "rows": 7946
+  },
+  {
+   "value": "Light Snow / Windy",
+   "class": "frozen",
+   "rows": 6826
+  },
+  {
+   "value": "Heavy Snow",
+   "class": "frozen",
+   "rows": 5003
+  },
+  {
+   "value": "Light Thunderstorms and Rain",
+   "class": "wet",
+   "rows": 4931
+  },
+  {
+   "value": "Drizzle",
+   "class": "wet",
+   "rows": 4726
+  },
+  {
+   "value": "Thunderstorm",
+   "class": "wet",
+   "rows": 4438
+  },
+  {
+   "value": "Patches of Fog",
+   "class": "dry",
+   "rows": 4144
+  },
+  {
+   "value": "Mist",
+   "class": "dry",
+   "rows": 3539
+  },
+  {
+   "value": "Light Freezing Rain",
+   "class": "frozen",
+   "rows": 3465
+  },
+  {
+   "value": "N/A Precipitation",
+   "class": "ambiguous",
+   "rows": 3252
+  },
+  {
+   "value": "Shallow Fog",
+   "class": "dry",
+   "rows": 3068
+  },
+  {
+   "value": "Heavy Thunderstorms and Rain",
+   "class": "wet",
+   "rows": 2485
+  },
+  {
+   "value": "Rain / Windy",
+   "class": "wet",
+   "rows": 2372
+  },
+  {
+   "value": "Thunderstorms and Rain",
+   "class": "wet",
+   "rows": 2217
+  },
+  {
+   "value": "Haze / Windy",
+   "class": "dry",
+   "rows": 1595
+  },
+  {
+   "value": "Heavy Rain / Windy",
+   "class": "wet",
+   "rows": 1523
+  },
+  {
+   "value": "Showers in the Vicinity",
+   "class": "dry",
+   "rows": 1514
+  },
+  {
+   "value": "Snow / Windy",
+   "class": "frozen",
+   "rows": 1285
+  },
+  {
+   "value": "Light Freezing Drizzle",
+   "class": "frozen",
+   "rows": 1240
+  },
+  {
+   "value": "Heavy T-Storm / Windy",
+   "class": "wet",
+   "rows": 1096
+  },
+  {
+   "value": "Light Freezing Fog",
+   "class": "frozen",
+   "rows": 1001
+  },
+  {
+   "value": "Blowing Snow / Windy",
+   "class": "frozen",
+   "rows": 925
+  },
+  {
+   "value": "Heavy Snow / Windy",
+   "class": "frozen",
+   "rows": 902
+  },
+  {
+   "value": "T-Storm / Windy",
+   "class": "wet",
+   "rows": 813
+  },
+  {
+   "value": "Fog / Windy",
+   "class": "dry",
+   "rows": 743
+  },
+  {
+   "value": "Blowing Snow",
+   "class": "frozen",
+   "rows": 740
+  },
+  {
+   "value": "Thunder / Windy",
+   "class": "dry",
+   "rows": 562
+  },
+  {
+   "value": "Heavy Drizzle",
+   "class": "wet",
+   "rows": 452
+  },
+  {
+   "value": "Drizzle and Fog",
+   "class": "wet",
+   "rows": 393
+  },
+  {
+   "value": "Snow and Sleet",
+   "class": "frozen",
+   "rows": 350
+  },
+  {
+   "value": "Wintry Mix / Windy",
+   "class": "frozen",
+   "rows": 331
+  },
+  {
+   "value": "Blowing Dust / Windy",
+   "class": "dry",
+   "rows": 266
+  },
+  {
+   "value": "Light Ice Pellets",
+   "class": "frozen",
+   "rows": 262
+  },
+  {
+   "value": "Light Rain Shower",
+   "class": "wet",
+   "rows": 259
+  },
+  {
+   "value": "Light Sleet",
+   "class": "frozen",
+   "rows": 256
+  },
+  {
+   "value": "Light Drizzle / Windy",
+   "class": "wet",
+   "rows": 239
+  },
+  {
+   "value": "Light Snow and Sleet",
+   "class": "frozen",
+   "rows": 204
+  },
+  {
+   "value": "Freezing Rain",
+   "class": "frozen",
+   "rows": 197
+  },
+  {
+   "value": "Blowing Dust",
+   "class": "dry",
+   "rows": 189
+  },
+  {
+   "value": "Widespread Dust",
+   "class": "dry",
+   "rows": 181
+  },
+  {
+   "value": "Light Rain Showers",
+   "class": "wet",
+   "rows": 157
+  },
+  {
+   "value": "Sleet",
+   "class": "frozen",
+   "rows": 147
+  },
+  {
+   "value": "Rain Showers",
+   "class": "wet",
+   "rows": 123
+  },
+  {
+   "value": "Ice Pellets",
+   "class": "frozen",
+   "rows": 101
+  },
+  {
+   "value": "Snow and Sleet / Windy",
+   "class": "frozen",
+   "rows": 96
+  },
+  {
+   "value": "Smoke / Windy",
+   "class": "dry",
+   "rows": 95
+  },
+  {
+   "value": "Light Freezing Rain / Windy",
+   "class": "frozen",
+   "rows": 81
+  },
+  {
+   "value": "Small Hail",
+   "class": "frozen",
+   "rows": 75
+  },
+  {
+   "value": "Rain Shower",
+   "class": "wet",
+   "rows": 59
+  },
+  {
+   "value": "Sand / Dust Whirlwinds",
+   "class": "dry",
+   "rows": 51
+  },
+  {
+   "value": "Squalls / Windy",
+   "class": "wet",
+   "rows": 47
+  },
+  {
+   "value": "Light Snow and Sleet / Windy",
+   "class": "frozen",
+   "rows": 45
+  },
+  {
+   "value": "Light Snow Shower",
+   "class": "frozen",
+   "rows": 44
+  },
+  {
+   "value": "Partial Fog",
+   "class": "dry",
+   "rows": 40
+  },
+  {
+   "value": "Hail",
+   "class": "frozen",
+   "rows": 39
+  },
+  {
+   "value": "Light Snow with Thunder",
+   "class": "frozen",
+   "rows": 38
+  },
+  {
+   "value": "Squalls",
+   "class": "wet",
+   "rows": 35
+  },
+  {
+   "value": "Heavy Sleet",
+   "class": "frozen",
+   "rows": 33
+  },
+  {
+   "value": "Freezing Drizzle",
+   "class": "frozen",
+   "rows": 30
+  },
+  {
+   "value": "Thunder / Wintry Mix",
+   "class": "frozen",
+   "rows": 29
+  },
+  {
+   "value": "Sleet / Windy",
+   "class": "frozen",
+   "rows": 25
+  },
+  {
+   "value": "Widespread Dust / Windy",
+   "class": "dry",
+   "rows": 24
+  },
+  {
+   "value": "Light Snow Showers",
+   "class": "frozen",
+   "rows": 24
+  },
+  {
+   "value": "Drizzle / Windy",
+   "class": "wet",
+   "rows": 23
+  },
+  {
+   "value": "Volcanic Ash",
+   "class": "dry",
+   "rows": 22
+  },
+  {
+   "value": "Funnel Cloud",
+   "class": "dry",
+   "rows": 22
+  },
+  {
+   "value": "Light Thunderstorms and Snow",
+   "class": "frozen",
+   "rows": 22
+  },
+  {
+   "value": "Snow and Thunder",
+   "class": "frozen",
+   "rows": 21
+  },
+  {
+   "value": "Sand",
+   "class": "dry",
+   "rows": 19
+  },
+  {
+   "value": "Tornado",
+   "class": "dry",
+   "rows": 19
+  },
+  {
+   "value": "Freezing Rain / Windy",
+   "class": "frozen",
+   "rows": 18
+  },
+  {
+   "value": "Light Rain Shower / Windy",
+   "class": "wet",
+   "rows": 16
+  },
+  {
+   "value": "Light Sleet / Windy",
+   "class": "frozen",
+   "rows": 15
+  },
+  {
+   "value": "Mist / Windy",
+   "class": "dry",
+   "rows": 15
+  },
+  {
+   "value": "Thunder and Hail",
+   "class": "frozen",
+   "rows": 14
+  },
+  {
+   "value": "Heavy Freezing Rain",
+   "class": "frozen",
+   "rows": 11
+  },
+  {
+   "value": "Light Haze",
+   "class": "dry",
+   "rows": 10
+  },
+  {
+   "value": "Thunder / Wintry Mix / Windy",
+   "class": "frozen",
+   "rows": 10
+  },
+  {
+   "value": "Snow Grains",
+   "class": "frozen",
+   "rows": 9
+  },
+  {
+   "value": "Heavy Snow with Thunder",
+   "class": "frozen",
+   "rows": 8
+  },
+  {
+   "value": "Heavy Rain Showers",
+   "class": "wet",
+   "rows": 7
+  },
+  {
+   "value": "Patches of Fog / Windy",
+   "class": "dry",
+   "rows": 7
+  },
+  {
+   "value": "Heavy Thunderstorms with Small Hail",
+   "class": "frozen",
+   "rows": 7
+  },
+  {
+   "value": "Shallow Fog / Windy",
+   "class": "dry",
+   "rows": 7
+  },
+  {
+   "value": "Sand / Dust Whirls Nearby",
+   "class": "dry",
+   "rows": 6
+  },
+  {
+   "value": "Light Snow Grains",
+   "class": "frozen",
+   "rows": 6
+  },
+  {
+   "value": "Drifting Snow / Windy",
+   "class": "frozen",
+   "rows": 6
+  },
+  {
+   "value": "Low Drifting Snow",
+   "class": "frozen",
+   "rows": 5
+  },
+  {
+   "value": "Heavy Thunderstorms and Snow",
+   "class": "frozen",
+   "rows": 5
+  },
+  {
+   "value": "Light Snow Shower / Windy",
+   "class": "frozen",
+   "rows": 5
+  },
+  {
+   "value": "Heavy Freezing Drizzle",
+   "class": "frozen",
+   "rows": 5
+  },
+  {
+   "value": "Light Fog",
+   "class": "dry",
+   "rows": 4
+  },
+  {
+   "value": "Heavy Ice Pellets",
+   "class": "frozen",
+   "rows": 4
+  },
+  {
+   "value": "Sand / Dust Whirlwinds / Windy",
+   "class": "dry",
+   "rows": 4
+  },
+  {
+   "value": "Heavy Blowing Snow",
+   "class": "frozen",
+   "rows": 4
+  },
+  {
+   "value": "Sleet and Thunder",
+   "class": "frozen",
+   "rows": 4
+  },
+  {
+   "value": "Duststorm",
+   "class": "dry",
+   "rows": 3
+  },
+  {
+   "value": "Light Hail",
+   "class": "frozen",
+   "rows": 3
+  },
+  {
+   "value": "Light Thunderstorm",
+   "class": "wet",
+   "rows": 3
+  },
+  {
+   "value": "Light Blowing Snow",
+   "class": "frozen",
+   "rows": 3
+  },
+  {
+   "value": "Thunderstorms and Snow",
+   "class": "frozen",
+   "rows": 3
+  },
+  {
+   "value": "Rain Shower / Windy",
+   "class": "wet",
+   "rows": 3
+  },
+  {
+   "value": "Heavy Rain Shower",
+   "class": "wet",
+   "rows": 3
+  },
+  {
+   "value": "Blowing Sand",
+   "class": "dry",
+   "rows": 2
+  },
+  {
+   "value": "Snow Showers",
+   "class": "frozen",
+   "rows": 2
+  },
+  {
+   "value": "Snow and Thunder / Windy",
+   "class": "frozen",
+   "rows": 2
+  },
+  {
+   "value": "Rain and Sleet",
+   "class": "frozen",
+   "rows": 2
+  },
+  {
+   "value": "Heavy Sleet and Thunder",
+   "class": "frozen",
+   "rows": 2
+  },
+  {
+   "value": "Thunder and Hail / Windy",
+   "class": "frozen",
+   "rows": 2
+  },
+  {
+   "value": "Heavy Freezing Rain / Windy",
+   "class": "frozen",
+   "rows": 1
+  },
+  {
+   "value": "Partial Fog / Windy",
+   "class": "dry",
+   "rows": 1
+  },
+  {
+   "value": "Heavy Smoke",
+   "class": "dry",
+   "rows": 1
+  },
+  {
+   "value": "Dust Whirls",
+   "class": "dry",
+   "rows": 1
+  },
+  {
+   "value": "Heavy Sleet / Windy",
+   "class": "frozen",
+   "rows": 1
+  },
+  {
+   "value": "Sand / Windy",
+   "class": "dry",
+   "rows": 1
+  },
+  {
+   "value": "Heavy Rain Shower / Windy",
+   "class": "wet",
+   "rows": 1
+  },
+  {
+   "value": "Blowing Snow Nearby",
+   "class": "frozen",
+   "rows": 1
+  },
+  {
+   "value": "Drifting Snow",
+   "class": "frozen",
+   "rows": 1
+  }
+ ],
+ "class_totals": {
+  "dry": 6805041,
+  "wet": 566726,
+  "frozen": 179916,
+  "ambiguous": 3252
+ },
+ "precipitation_by_class": {
+  "dry": {
+   "missing": 2017683,
+   "zero": 4677804,
+   "positive": 109554
+  },
+  "wet": {
+   "missing": 31033,
+   "zero": 179737,
+   "positive": 355956
+  },
+  "frozen": {
+   "missing": 9784,
+   "zero": 105687,
+   "positive": 64445
+  },
+  "ambiguous": {
+   "missing": 33,
+   "zero": 2578,
+   "positive": 641
+  }
+ },
+ "visibility_by_class": {
+  "dry": {
+   "missing": 19247,
+   "lt1": 61891,
+   "1to5": 195732,
+   "ge5": 6528171
+  },
+  "wet": {
+   "missing": 900,
+   "lt1": 13092,
+   "1to5": 210791,
+   "ge5": 341943
+  },
+  "frozen": {
+   "missing": 451,
+   "lt1": 41555,
+   "1to5": 98343,
+   "ge5": 39567
+  },
+  "ambiguous": {
+   "missing": 12,
+   "lt1": 306,
+   "1to5": 1472,
+   "ge5": 1462
+  }
+ },
+ "severity_definition": {
+  "1": "least impact on traffic (short delay)",
+  "4": "most impact on traffic (long delay)",
+  "note": "Severity measures traffic delay as defined by the dataset authors, not injury."
+ },
+ "sample_records": [
+  {
+   "ID": "A-1",
+   "Severity": 3,
+   "Start_Time": "2016-02-08 05:46:00",
+   "State": "OH",
+   "Visibility(mi)": 10.0,
+   "Precipitation(in)": 0.02,
+   "Weather_Condition": "Light Rain",
+   "Sunrise_Sunset": "Night"
+  },
+  {
+   "ID": "A-2",
+   "Severity": 2,
+   "Start_Time": "2016-02-08 06:07:59",
+   "State": "OH",
+   "Visibility(mi)": 10.0,
+   "Precipitation(in)": 0.0,
+   "Weather_Condition": "Light Rain",
+   "Sunrise_Sunset": "Night"
+  },
+  {
+   "ID": "A-3",
+   "Severity": 2,
+   "Start_Time": "2016-02-08 06:49:27",
+   "State": "OH",
+   "Visibility(mi)": 10.0,
+   "Precipitation(in)": null,
+   "Weather_Condition": "Overcast",
+   "Sunrise_Sunset": "Night"
+  },
+  {
+   "ID": "A-4",
+   "Severity": 3,
+   "Start_Time": "2016-02-08 07:23:34",
+   "State": "OH",
+   "Visibility(mi)": 9.0,
+   "Precipitation(in)": null,
+   "Weather_Condition": "Mostly Cloudy",
+   "Sunrise_Sunset": "Night"
+  }
+ ]
+}

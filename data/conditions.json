@@ -1,0 +1,22 @@
+{
+ "cells": {
+  "dry_day": 4732523,
+  "dry_night": 2054901,
+  "wet_day": 389261,
+  "wet_night": 175763
+ },
+ "n_wet_dry": 7352448,
+ "share_of_wet_dry": {
+  "dry_day": 0.6436662999860727,
+  "dry_night": 0.27948528163680997,
+  "wet_day": 0.05294304699604812,
+  "wet_night": 0.02390537138106927
+ },
+ "wet_share": 0.0768484183771174,
+ "night_share": 0.3033906530178792,
+ "held_out": {
+  "frozen": 178940,
+  "ambiguous": 3225
+ },
+ "night_share_all_classes": 0.306748734142019
+}
